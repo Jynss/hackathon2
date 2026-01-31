@@ -21,9 +21,17 @@ export default function BusinessSignUp() {
             <i className='bx bx-font-family'></i>
           </div>
 
-          <div className="input-box">
-            <input type="text" placeholder="Business Type" required />
-            <i className='bx bx-font-family'></i>
+          <div className="checkbox-group">
+            <p className="checkbox-label">Business Type</p>
+            <div className="checkbox-scroll">
+              <label><input type="checkbox" name="businessType" value="Hair Salon" /> Hair Salon</label>
+              <label><input type="checkbox" name="businessType" value="Barbershop" /> Barbershop</label>
+              <label><input type="checkbox" name="businessType" value="Nail Salon" /> Nail Salon</label>
+              <label><input type="checkbox" name="businessType" value="Spa & Wellness" /> Spa & Wellness</label>
+              <label><input type="checkbox" name="businessType" value="Makeup Artist" /> Makeup Artist</label>
+              <label><input type="checkbox" name="businessType" value="Skincare" /> Skincare</label>
+              <label><input type="checkbox" name="businessType" value="Other" /> Other</label>
+            </div>
           </div>
 
           <div className="input-box">

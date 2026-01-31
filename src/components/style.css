@@ -95,29 +95,53 @@ header .navbar {
 .register-link p a { color:var(--orange-color); text-decoration:none; font-weight:600; }
 .bottom-container { position:fixed; bottom:0; left:0; background-color:var(--orange-color); margin:0; padding:20px 0; width:100%; text-align:center; }
 .footer-link { color:white; margin:0 8px; }
+.checkbox-group { 
+  text-align:left; 
+  margin:20px 0; 
+  padding:10px 15px; 
+  border:2px solid var(--orange-color); 
+  border-radius:10px; }
+
+.checkbox-group .checkbox-label { 
+  color:var(--orange-color); 
+  font-weight:600; margin-bottom:10px; }
+
+.checkbox-group label { 
+  display:block;
+  margin:8px 0; 
+  color:var(--orange-color); 
+  cursor:pointer; }
+
+.checkbox-group input[type="checkbox"] { 
+  margin-right:8px; 
+  accent-color:var(--orange-color); }
 
 /* Profile styles */
-.container { width:90%; margin:0 auto; background:white; }
+.container { width:95%; margin:0 auto; background:white; }
 .header { position:relative; }
 .profile-section { padding:20px; display:flex; align-items:flex-start; gap:30px; margin-top:-80px; position:relative; }
-.profile-pic { width:150px; height:150px; margin-top:80px; border-radius:50%; border:5px solid white; background: linear-gradient(135deg,#ff8400 0%, #003884 100%); display:flex; align-items:center; justify-content:center; font-size:48px; color:white; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-.profile-info { flex:1; padding-top:80px; }
-.profile-name { font-size:25px; font-weight:700; margin-bottom:5px; }
-.profile-username { color:#65676b; font-size:17px; margin-bottom:15px; }
+/* .profile-pic { width:200px; height:200px; margin-top:80px; margin-left:20px; border-radius:25%; border:5px solid white; background: linear-gradient(135deg,#ff8400 0%, #003884 100%); display:flex; align-items:center; justify-content:center; font-size:48px; color:white; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); } */
+.profile-pic { width:200px; height:200px; margin-top:80px; margin-left:20px; border-radius:25%; border:5px solid white; background: linear-gradient(135deg,#ff8400 0%, #003884 100%); display:flex; align-items:center; justify-content:center; font-size:48px; color:white; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+
+.profile-info { flex:1; padding-top:80px; display:flex; gap:30px; }
+.profile-name-section { display:flex; flex-direction:row; justify-content:center; min-width:200px; }
+.profile-name { font-size:25px; font-weight:700; margin-bottom:5px; margin-top:0; }
+.profile-username { color:#65676b; font-size:17px; margin-top:0; margin-bottom:0; }
+.profile-details { flex:1; display:flex; flex-direction:column; justify-content:center; }
 .profile-bio, .profile-reviews { margin-bottom:15px; line-height:1.5; }
-.profile-stats { display:flex; gap:30px; margin-bottom:20px; }
+.profile-stats { display:flex; gap:30px; margin-bottom:0; }
 .stat { display:flex; flex-direction:column; align-items:center; }
 .stat-number { font-size:20px; font-weight:700; }
 .stat-label { font-size:14px; color:#65676b; }
-.action-buttons { display:flex; gap:10px; margin-bottom:15px; }
+.action-buttons { display:flex; gap:10px; margin-bottom:15px; padding-left:180px; margin-top:15px; }
 .btn-primary { padding:8px 20px; border-radius:8px; border:none; font-weight:600; cursor:pointer; background:#1877f2; color:white; }
 .btn-secondary { padding:8px 20px; border-radius:8px; border:none; font-weight:600; cursor:pointer; background:#e4e6eb; color:#1c1e21; }
-.profile-meta { display:flex; gap:20px; font-size:14px; color:#65676b; }
+.profile-meta { display:flex; gap:20px; font-size:14px; color:#65676b; padding-left:180px; }
 .tabs { border-top:1px solid #e4e6eb; display:flex; justify-content:center; gap:40px; padding:0 20px; }
 .tab { padding:15px 0; cursor:pointer; border-bottom:3px solid transparent; font-weight:600; color:#65676b; }
 .tab.active { border-bottom-color:#1877f2; color:#1877f2; }
 .content { padding:20px; }
-.posts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+.posts-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; }
 .post { aspect-ratio:1; background:linear-gradient(135deg,#667eea 0%, #764ba2 100%); position:relative; cursor:pointer; overflow:hidden; }
 .post-overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; gap:20px; color:white; font-weight:600; opacity:0; transition:opacity 0.2s; }
 .post:hover .post-overlay { opacity:1; }
@@ -131,3 +155,33 @@ header .navbar {
 
 
 /* Messages */
+.messages-container { 
+  display: flex; 
+  height: calc(100vh - 80px); 
+  background: white; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  overflow: hidden; }
+  
+
+.contacts-sidebar {
+  width: 320px;
+  border-right: 10px solid var(--yellow-color);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: #fafafa;
+}
+
+.contacts-header {
+  padding: 20px;
+  border-bottom: 0px solid #e4e6eb;
+  background-color: #91C6BC
+}
+
+.contacts-sidebar h2 {
+  font-size: var(--font-size-l);
+  color: var(--orange-color);
+  margin: 0;
+  text-align: center;
+}
