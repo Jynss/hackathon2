@@ -7,7 +7,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    navigate('/')
+    navigate('/business-or-home')
   }
 
   return (
@@ -55,9 +55,7 @@ export default function Signup() {
       </div>
 
       <div className="bottom-container">
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Instagram</a>
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Twitter</a>
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>
+
         <Link className="footer-link" to="/">Home</Link>
         <p className="copy-right">© 2026 Capital Styles</p>
       </div>

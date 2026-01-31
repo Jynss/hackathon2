@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import './style.css'
 
 export default function BusinessSignUp() {
   const navigate = useNavigate()
+  const [selectedType, setSelectedType] = useState('')
+
+  const businessTypes = [
+    'Hair Salon',
+    'Barbershop',
+    'Nail Salon',
+    'Spa & Wellness',
+    'Makeup Artist',
+    'Skincare',
+    'Other'
+  ]
+
+  const handleTypeChange = (e) => setSelectedType(e.target.value)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,17 +34,14 @@ export default function BusinessSignUp() {
             <i className='bx bx-font-family'></i>
           </div>
 
-          <div className="checkbox-group">
-            <p className="checkbox-label">Business Type</p>
-            <div className="checkbox-scroll">
-              <label><input type="checkbox" name="businessType" value="Hair Salon" /> Hair Salon</label>
-              <label><input type="checkbox" name="businessType" value="Barbershop" /> Barbershop</label>
-              <label><input type="checkbox" name="businessType" value="Nail Salon" /> Nail Salon</label>
-              <label><input type="checkbox" name="businessType" value="Spa & Wellness" /> Spa & Wellness</label>
-              <label><input type="checkbox" name="businessType" value="Makeup Artist" /> Makeup Artist</label>
-              <label><input type="checkbox" name="businessType" value="Skincare" /> Skincare</label>
-              <label><input type="checkbox" name="businessType" value="Other" /> Other</label>
-            </div>
+          <div className="input-box">
+            <select value={selectedType} onChange={handleTypeChange} required>
+              <option value="">Select Business Type</option>
+              {businessTypes.map(type => (
+                <option key={type} value={type}>{type}</option>
+              ))}
+            </select>
+            <i className='bx bx-chevron-down'></i>
           </div>
 
           <div className="input-box">
@@ -53,9 +63,7 @@ export default function BusinessSignUp() {
       </div>
 
       <div className="bottom-container">
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Instagram</a>
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Twitter</a>
-        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>
+
         <Link className="footer-link" to="/">Home</Link>
         <p className="copy-right">© 2026 Capital Styles</p>
       </div>
