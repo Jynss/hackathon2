@@ -21,9 +21,9 @@ export default function Profile() {
   navigate('/messages'); 
 
     // fix when we get back
-  const handleBooking = () => {
-  // This changes the URL and tells React Router to render Messages.jsx
-  navigate('/booking');
+  // const handleBooking = () => {
+  // // This changes the URL and tells React Router to render Messages.jsx
+  // navigate('/booking');
 };
 
   return (
@@ -42,10 +42,10 @@ export default function Profile() {
             {/* changes follow button to following and from blue(primary) to grey(secondary) */}
             <button className={`btn ${isFollowing ? 'btn-secondary' : 'btn-primary'}`} 
             onClick={handleFollow}>{isFollowing ? 'Following' : 'Follow'}</button>
-            <button className="btn btn-secondary" onClick={handleBooking}
+            {/* <button className="btn btn-secondary" onClick={handleBooking}
             >
               Book 📅
-            </button>
+            </button> */}
             <button className="btn btn-secondary" onClick={handleMessage}
             >
               Message
