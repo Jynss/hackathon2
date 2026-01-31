@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 00;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            /* height: 200px; */
+            position: relative;
+        }
+
+        .profile-section {
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: -80px;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            margin-top: 80px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background: linear-gradient(135deg, #ff8400 0%, #003884 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .profile-info {
+            flex: 1;
+            padding-top: 80px;
+        }
+
+        .profile-name {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .profile-username {
+            color: #65676b;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .profile-bio {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .profile-reviews {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #65676b;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #1877f2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #166fe5;
+        }
+
+        .btn-secondary {
+            background: #e4e6eb;
+            color: #1c1e21;
+        }
+
+        .btn-secondary:hover {
+            background: #d8dadf;
+        }
+
+        .profile-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #65676b;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tabs {
+            border-top: 1px solid #e4e6eb;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .tab {
+            padding: 15px 0;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #65676b;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            border-bottom-color: #1877f2;
+            color: #1877f2;
+        }
+
+        .tab:hover {
+            color: #1c1e21;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+        }
+
+        .post {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .post:hover .post-overlay {
+            opacity: 1;
+        }
+
+        .post-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            color: white;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .post:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .post:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .post:nth-child(4) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .post:nth-child(5) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .post:nth-child(6) {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .post:nth-child(7) {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .post:nth-child(8) {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .post:nth-child(9) {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-top: -60px;
+            }
+
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-info {
+                padding-top: 20px;
+            }
+
+            .posts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        
+        <!-- edit name, business name, bio,  -->
+        <div class="profile-section">
+            <div class="profile-pic">FW</div>
+            <!-- add profile picture  -->
+            
+            <div class="profile-info">
+                <h1 class="profile-name">Fay Wright</h1>
+                
+                <div class="profile-username">@FinessedByFay</div>
+                
+                <div class="profile-bio">
+                    Hair Stylist <br>
+                    Specialize in Locs<br>
+                </div>
+                
+                <!-- Full star: &#11088; -->
+                <!-- Empty star: &#x2606; -->
+                <div class="profile-reviews">
+                     &#11088; 
+                     &#10030;
+                     <br>
+                </div>
+                
+                <div class="profile-stats">
+                    <!-- <div class="stat">
+                        <div class="stat-number">1,234</div>
+                        <div class="stat-label">Posts</div>
+                    </div> -->
+                    <!-- <div class="stat">
+                        <div class="stat-number">45.6K</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">987</div>
+                        <div class="stat-label">Following</div>
+                    </div> -->
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="handleFollow()">Follow</button>
+                    <button class="btn btn-secondary" onclick="handleMessage()">Message</button>
+                    <!-- <button class="btn btn-secondary" onclick="handleMore()">•••</button> -->
+                </div>
+                
+                <div class="profile-meta">
+                    <div class="meta-item">
+                        <span>🔗</span>
+                        <span>instagram.com</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>Styling Since 2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab(this, 'gallery')">Gallery</div>
+                        <div class="tab" onclick="switchTab(this, 'prices')">Pricing</div>
+            <div class="tab" onclick="switchTab(this, 'about')">About</div>
+            <!-- <div class="tab" onclick="switchTab(this, 'videos')">Videos</div> -->
+        </div>
+        
+        <div class="content">
+            <div class="posts-grid">
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 1.2K</span>
+                        <span>💬 42</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 856</span>
+                        <span>💬 23</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 2.1K</span>
+                        <span>💬 67</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 945</span>
+                        <span>💬 31</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 1.8K</span>
+                        <span>💬 54</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 723</span>
+                        <span>💬 19</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 1.5K</span>
+                        <span>💬 48</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 2.3K</span>
+                        <span>💬 89</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-overlay">
+                        <span>❤️ 1.1K</span>
+                        <span>💬 35</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleFollow() {
+            const btn = event.target;
+            if (btn.textContent === 'Follow') {
+                btn.textContent = 'Following';
+                btn.style.background = '#e4e6eb';
+                btn.style.color = '#1c1e21';
+                
+                // Update follower count
+                const followerStat = document.querySelector('.stat-number');
+                const currentFollowers = parseFloat(followerStat.textContent);
+                followerStat.textContent = (currentFollowers + 0.1).toFixed(1) + 'K';
+            } else {
+                btn.textContent = 'Follow';
+                btn.style.background = '#1877f2';
+                btn.style.color = 'white';
+                
+                // Update follower count
+                const followerStat = document.querySelector('.stat-number');
+                const currentFollowers = parseFloat(followerStat.textContent);
+                followerStat.textContent = (currentFollowers - 0.1).toFixed(1) + 'K';
+            }
+        }
+
+        function handleMessage() {
+            alert('Message feature coming soon!');
+        }
+
+        function handleMore() {
+            alert('More options:\n• Share Profile\n• Copy Link\n• Report');
+        }
+
+        function switchTab(element, tabName) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab
+            element.classList.add('active');
+            
+            // You could add different content for each tab here
+            console.log('Switched to:', tabName);
+        }
+    </script>
+</body>
+</html>

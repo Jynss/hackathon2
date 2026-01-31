@@ -1,38 +1,127 @@
-/* importing poppins font*/
-
+/* importing poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--yellow-color);
 }
 
 :root {
-    /* Colors */
-    --white-color: #fff;
-    --orange-color: #ff8400;
-    --blue-color: #003884;
-    
-    /* Font Size */
-    --font-size-s: 0.9rem;
-    --font-size-n: 1rem;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
-    
-    /* Font Weight */
-    --font-weight-regular: 400;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    
-    /* Border Radius */
-    --border-radius-s: 5px;
-    --border-radius-m: 10px;
-    --border-radius-l: 15px;
+  /* Colors */
+  --teal-color: #91C6BC;
+  --darkteal-color: #4B9DA9;
+  --yellow-color: #f6f3c2;
+  --orange-color: #e37434;
+
+  /* Font Size */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+
+  /* Font Weight */
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Border radius */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50px;
+
+  /* Site max width */
+  --site-max-width: 1300px;
 }
 
-header {
-    background: linear-gradient(135deg, #ff8400 0%, #003884 100%);
+ul { list-style: none; }
+
+a { text-decoration: none; }
+
+/* HEADER */
+header { 
+    background: var(--yellow-color);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0; }
+
+/* NAVBAR */
+header .navbar { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%; 
+  padding: 16px; }
+
+/* LOGO */
+.navbar .nav-logo .logo-text { color: var(--teal-color); font-size: var(--font-size-xl); }
+
+/* NAV MENU */
+.navbar .nav-menu {
+   display: flex; 
+   gap: 10px; }
+
+/* NAV LINKS */
+.navbar .nav-menu .nav-link { padding: 10px 18px; color: var(--orange-color); background: var(--darkteal-color); border-radius: var(--border-radius-m); transition: 0.3s ease; }
+
+/* HOVER EFFECT */
+.navbar .nav-menu .nav-link:hover { background: var(--teal-color); color: white; }
+
+/* --- Login/Signup/Profile shared styles --- */
+.login-page { display:flex; justify-content:center; align-items:center; min-height:100vh; background: url('/components/images/background.png') no-repeat center/cover; }
+.wrapper { width:420px; background:#fff; color:var(--orange-color); padding:20px; margin-bottom:100px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); text-align:center; }
+.wrapper h1 { font-size:36px; text-shadow:-2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; }
+.input-box { width:100%; height:50px; margin:20px 0; position:relative; }
+.input-box input { width:100%; height:100%; background:transparent; border:none; outline:none; border:2px solid var(--orange-color); border-radius:40px; padding:10px; color:var(--orange-color); }
+.input-box input::placeholder { color:var(--orange-color); }
+.input-box i { position:absolute; right:20px; top:50%; transform:translateY(-50%); font-size:20px; }
+.remember-forgot { display:flex; justify-content:space-between; font-size:14.5px; margin:10px 0; }
+.btn { width:100%; height:45px; background:#fff; border:none; outline:none; border-radius:40px; box-shadow:0 0 10px rgba(0,0,0,0.1); cursor:pointer; font-size:16px; color:#333; font-weight:600; margin-top:10px; }
+.register-link { font-size:14.5px; margin-top:20px; }
+.register-link p a { color:var(--orange-color); text-decoration:none; font-weight:600; }
+.bottom-container { position:fixed; bottom:0; left:0; background-color:var(--orange-color); margin:0; padding:20px 0; width:100%; text-align:center; }
+.footer-link { color:white; margin:0 8px; }
+
+/* Profile styles */
+.container { max-width:935px; margin:0 auto; background:white; }
+.header { position:relative; }
+.profile-section { padding:20px; display:flex; align-items:flex-start; gap:30px; margin-top:-80px; position:relative; }
+.profile-pic { width:150px; height:150px; margin-top:80px; border-radius:50%; border:5px solid white; background: linear-gradient(135deg,#ff8400 0%, #003884 100%); display:flex; align-items:center; justify-content:center; font-size:48px; color:white; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.profile-info { flex:1; padding-top:80px; }
+.profile-name { font-size:25px; font-weight:700; margin-bottom:5px; }
+.profile-username { color:#65676b; font-size:17px; margin-bottom:15px; }
+.profile-bio, .profile-reviews { margin-bottom:15px; line-height:1.5; }
+.profile-stats { display:flex; gap:30px; margin-bottom:20px; }
+.stat { display:flex; flex-direction:column; align-items:center; }
+.stat-number { font-size:20px; font-weight:700; }
+.stat-label { font-size:14px; color:#65676b; }
+.action-buttons { display:flex; gap:10px; margin-bottom:15px; }
+.btn-primary { padding:8px 20px; border-radius:8px; border:none; font-weight:600; cursor:pointer; background:#1877f2; color:white; }
+.btn-secondary { padding:8px 20px; border-radius:8px; border:none; font-weight:600; cursor:pointer; background:#e4e6eb; color:#1c1e21; }
+.profile-meta { display:flex; gap:20px; font-size:14px; color:#65676b; }
+.tabs { border-top:1px solid #e4e6eb; display:flex; justify-content:center; gap:40px; padding:0 20px; }
+.tab { padding:15px 0; cursor:pointer; border-bottom:3px solid transparent; font-weight:600; color:#65676b; }
+.tab.active { border-bottom-color:#1877f2; color:#1877f2; }
+.content { padding:20px; }
+.posts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+.post { aspect-ratio:1; background:linear-gradient(135deg,#667eea 0%, #764ba2 100%); position:relative; cursor:pointer; overflow:hidden; }
+.post-overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; gap:20px; color:white; font-weight:600; opacity:0; transition:opacity 0.2s; }
+.post:hover .post-overlay { opacity:1; }
+
+@media (max-width: 768px) {
+  .profile-section { flex-direction: column; align-items: center; text-align: center; margin-top: -60px; }
+  .profile-pic { width:120px; height:120px; }
+  .profile-info { padding-top:20px; }
+  .posts-grid { grid-template-columns: repeat(2,1fr); }
 }

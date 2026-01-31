@@ -1,31 +1,23 @@
-import { useState } from 'react';
-import './style.css';
+import React from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import './style.css'
 
-function ForgotPassword() {
-  const [email, setEmail] = useState('');
+export default function ForgotPassword() {
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle password reset logic here
-    console.log('Password reset email:', email);
-    // Redirect to home or login page
-    window.location.href = '/';
-  };
+    e.preventDefault()
+    navigate('/')
+  }
 
   return (
-    <body className="login-page">
+    <div className="login-page">
       <div className="wrapper">
-        <form onSubmit={handleSubmit}>
+        <form id="forgotForm" onSubmit={handleSubmit}>
           <h1>Forgot Password?</h1>
 
           <div className="input-box">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <input type="email" placeholder="Email" required />
             <i className='bx bxs-envelope'></i>
           </div>
 
@@ -34,14 +26,12 @@ function ForgotPassword() {
       </div>
 
       <div className="bottom-container">
-        <a className="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a className="footer-link" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a className="footer-link" href="https://www.github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a className="footer-link" href="/">Home</a>
+        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Twitter</a>
+        <a className="footer-link" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>
+        <Link className="footer-link" to="/">Home</Link>
         <p className="copy-right">© 2026 Capital Styles</p>
       </div>
-    </body>
-  );
+    </div>
+  )
 }
-
-export default ForgotPassword;

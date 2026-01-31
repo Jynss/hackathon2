@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import './style.css'
 
-export default function Signup() {
+export default function BusinessSignUp() {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -13,16 +13,16 @@ export default function Signup() {
   return (
     <div className="login-page">
       <div className="wrapper">
-        <form id="signupForm" onSubmit={handleSubmit}>
-          <h1>Sign Up</h1>
+        <form id="businessSignupForm" onSubmit={handleSubmit}>
+          <h1>Business Sign Up</h1>
 
           <div className="input-box">
-            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Business Name" required />
             <i className='bx bx-font-family'></i>
           </div>
 
           <div className="input-box">
-            <input type="text" placeholder="Last Name" required />
+            <input type="text" placeholder="Business Type" required />
             <i className='bx bx-font-family'></i>
           </div>
 
@@ -42,8 +42,13 @@ export default function Signup() {
           </div>
 
           <div className="input-box">
-            <input type="text" placeholder="Address" required />
+            <input type="text" placeholder="Business Address" required />
             <i className='bx bxs-user'></i>
+          </div>
+
+          <div className="input-box">
+            <input type="text" placeholder="Phone Number" required />
+            <i className='bx bxs-phone'></i>
           </div>
 
           <div className="remember-forgot">
