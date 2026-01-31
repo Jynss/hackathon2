@@ -27,21 +27,6 @@ export default function BusinessSignUp() {
           </div>
 
           <div className="input-box">
-            <input type="text" placeholder="Email" required />
-            <i className='bx bxs-envelope'></i>
-          </div>
-
-          <div className="input-box">
-            <input type="text" placeholder="Username" required />
-            <i className='bx bxs-user'></i>
-          </div>
-
-          <div className="input-box">
-            <input type="password" placeholder="Password" required />
-            <i className='bx bxs-lock-alt'></i>
-          </div>
-
-          <div className="input-box">
             <input type="text" placeholder="Business Address" required />
             <i className='bx bxs-user'></i>
           </div>

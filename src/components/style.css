@@ -6,10 +6,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+
 }
 
 body {
   background: var(--yellow-color);
+  width: 100%;
+
 }
 
 :root {
@@ -94,7 +97,7 @@ header .navbar {
 .footer-link { color:white; margin:0 8px; }
 
 /* Profile styles */
-.container { max-width:935px; margin:0 auto; background:white; }
+.container { width:90%; margin:0 auto; background:white; }
 .header { position:relative; }
 .profile-section { padding:20px; display:flex; align-items:flex-start; gap:30px; margin-top:-80px; position:relative; }
 .profile-pic { width:150px; height:150px; margin-top:80px; border-radius:50%; border:5px solid white; background: linear-gradient(135deg,#ff8400 0%, #003884 100%); display:flex; align-items:center; justify-content:center; font-size:48px; color:white; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
@@ -125,3 +128,6 @@ header .navbar {
   .profile-info { padding-top:20px; }
   .posts-grid { grid-template-columns: repeat(2,1fr); }
 }
+
+
+/* Messages */

@@ -49,15 +49,44 @@ export default function Profile() {
         <div className={`tab ${activeTab === 'about' ? 'active' : ''}`} onClick={() => switchTab('about')}>About</div>
       </div>
 
+      
       <div className="content">
-        <div className="posts-grid">
-          {Array.from({length:9}).map((_,i) => (
-            <div className="post" key={i}>
-              <div className="post-overlay"><span>❤️ {(i+1)*100}</span><span>💬 {Math.floor(i*3)}</span></div>
+          {/* GALLERY TAB */}
+          {activeTab === 'gallery' && (
+            <div className="posts-grid">
+              {Array.from({ length: 9 }).map((_, i) => (
+                <div className="post" key={i}>
+                  <div className="post-overlay">
+                    <span>❤️ {(i + 1) * 100}</span>
+                    <span>💬 {Math.floor(i * 3)}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+            )}
+
+          {/* PRICING TAB */}
+          {activeTab === 'prices' && (
+            <div className="pricing-list">
+              <h3>Services & Rates</h3>
+              <ul>
+                <li>Starter Locs - $150</li>
+                <li>Loc Retwist - $85</li>
+                  <li>Deep Condition - $25</li>
+              </ul>
+            </div>
+          )}
+
+          {/* ABOUT TAB */}
+          {activeTab === 'about' && (
+            <div className="about-section">
+              <h3>About Fay</h3>
+              <p>I've been styling locs in the tri-state area since 2019. My focus is on hair health and clean parting.</p>
+            </div>
+          )}
         </div>
-      </div>
-    </div>
-  )
-}
+
+
+            </div>
+          )
+        }
