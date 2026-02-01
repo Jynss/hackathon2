@@ -23,21 +23,23 @@ export default function Profile() {
     // fix when we get back
   // const handleBooking = () => {
   // // This changes the URL and tells React Router to render Messages.jsx
-  // navigate('/booking');
+  // navigate('/bookings');
 };
 
   return (
     <div className="container">
       <div className="profile-section">
-        <div className="profile-pic">FW</div>
+          <div> 
+            <div className="profile-pic">FW</div>
+            <div className="profile-reviews">&#11088; 4.6 (1.2k) </div>
+            </div>
         <div className="profile-info">
           <h1 className="profile-name">Fay Wright</h1>
           <div className="profile-username">@FinessedByFay</div>
-          <div className="profile-bio">Hair Stylist <br/> Specialize in Locs</div>
-          <div className="profile-reviews">&#11088; 4.6 (1.2k) </div>
-
+          <div className="profile-bio">Hair Stylist | Specialize in Locs</div>
           <div className="profile-stats"></div>
 
+          
           <div className="action-buttons">
             {/* changes follow button to following and from blue(primary) to grey(secondary) */}
             <button className={`btn ${isFollowing ? 'btn-secondary' : 'btn-primary'}`} 
