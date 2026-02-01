@@ -26,6 +26,16 @@ export default function NavBar() {
             <Link to="/profile" className="nav-link">Profile</Link>
           </li>
 
+          <li className="nav-item">
+            <Link to="/Points" className="nav-points">
+            
+
+            1.5k Points
+            
+            
+            </Link>
+          </li>
+
 
         </ul>
       </nav>
