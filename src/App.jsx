@@ -9,7 +9,7 @@ import ForgotPassword from './components/ForgotPassword'
 import Profile from './components/Profile'
 import Messages from './components/Messages'
 import BusinessSignUp from './components/BusinessSignUp'
-import BusinessOrHome from './components/BusinessOrHome'
+import BusinessOrHome from './components/BusinessorHome'
 
 function App() {
   return (
